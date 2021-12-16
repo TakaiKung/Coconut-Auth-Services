@@ -1,0 +1,15 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://TakaiKung:iamadmin@takaifreedb.4ijcx.mongodb.net/SOP?retryWrites=true&w=majority
+      database: SOP
+  application:
+    name: auth-service
+
+jwt:
+  secret: dVquNMBMsjNWcWscvTR6fjRyfHWEaqtYVGjm5wXnFB9uqbgJUXr288qdFWusXLgJjbUYxJbNVVSaWZvHNxkxvznL7FNU4UvXGZM5
+  expiration: 10000
+
+server:
+  port: 8002
+
