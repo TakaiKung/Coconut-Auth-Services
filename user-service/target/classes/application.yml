@@ -1,0 +1,10 @@
+server:
+  port: 9002
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://TakaiKung:iamadmin@takaifreedb.4ijcx.mongodb.net/SOP?retryWrites=true&w=majority
+      database: SOP
+  application:
+    name: user-service
