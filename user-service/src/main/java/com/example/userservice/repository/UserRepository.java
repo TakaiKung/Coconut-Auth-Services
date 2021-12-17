@@ -17,4 +17,6 @@ public interface UserRepository extends MongoRepository<User, String> {
 
     @Query(value = "{ name : '?0' }", fields = "{'item':0}")
     public User findUsersByNameAuth(String name);
+
 }
+
