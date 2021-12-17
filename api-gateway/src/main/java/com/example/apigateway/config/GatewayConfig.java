@@ -25,6 +25,10 @@ public class GatewayConfig {
                         .filters(f -> f.filter(filter))
                         .uri("lb://message-service")
                 )
+                .route("save-message", r->r.path("/save/**")
+                        .filters(f -> f.filter(filter))
+                        .uri("lb://save-message")
+                )
                 .build();
     }
 }
