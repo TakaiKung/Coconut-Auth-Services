@@ -1,10 +1,13 @@
 package com.example.userservice.repository;
 
+import com.example.userservice.UserMessage;
 import com.example.userservice.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -31,7 +34,7 @@ public class UserService {
         return userRepository.findUsersByName(n);
     }
 
-    public  User getUserAuth (String n) {
+    public User getUserAuth (String n) {
         return userRepository.findUsersByNameAuth(n);
     }
 
