@@ -24,10 +24,17 @@ public class UserController {
 
     @RequestMapping(value = "/add/inventory", method = RequestMethod.POST)
     public ResponseEntity<?> addInventory(@RequestBody Message message, @RequestHeader(value = "name") String name){
-        RabbitInventory rabbitInventory = new RabbitInventory("name",message);
 
-        rabbitTemplate.convertAndSend(MQConfig.EXCHANGE, MQConfig.ROUTING_KEY, rabbitInventory);
-        return ResponseEntity.ok(true);
+        RabbitInventory rabbitInventory = new RabbitInventory(name,message);
+        try {
+            rabbitTemplate.convertAndSend(MQConfig.EXCHANGE, MQConfig.ROUTING_KEY, rabbitInventory);
+            return ResponseEntity.ok(true);
+        }
+        catch (Exception e){
+            return ResponseEntity.ok("try again");
+        }
+
+
     }
 
 
