@@ -25,15 +25,14 @@ public class AuthService {
                         .build();
                 String accessToken = jwt.generate(user, "ACCESS");
                 String refreshToken = jwt.generate(user, "REFRESH");
-                return new AuthResponse(accessToken, refreshToken, "Complete");
+                return new AuthResponse(accessToken, refreshToken, account.getName(), "Complete");
             }
             else {
-                return new AuthResponse("", "","Unauthorized ! Password not correct or Have error in process");
+                return new AuthResponse("", "", "","Unauthorized ! Password not correct or Have error in process");
             }
         }
         catch (Exception e) {
-            return new AuthResponse("", "", e.getLocalizedMessage());
+            return new AuthResponse("", "","",e.getLocalizedMessage());
         }
     }
-
 }
