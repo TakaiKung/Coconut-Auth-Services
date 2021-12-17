@@ -10,7 +10,6 @@ import java.util.function.Predicate;
 public class RouterValidator {
 
     public static final List<String> openApiEndPoints = List.of(
-            "user/getAllUser",
             "user/register",
             "auth/login"
     );
@@ -19,5 +18,4 @@ public class RouterValidator {
             request -> openApiEndPoints
                     .stream()
                     .noneMatch(uri -> request.getURI().getPath().contains(uri));
-
 }

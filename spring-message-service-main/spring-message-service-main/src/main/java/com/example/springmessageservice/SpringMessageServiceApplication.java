@@ -1,17 +1,15 @@
-package com.example.apigateway;
+package com.example.springmessageservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin
 @EnableEurekaClient
 @SpringBootApplication
-public class ApiGatewayApplication {
+public class SpringMessageServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ApiGatewayApplication.class, args);
+        SpringApplication.run(SpringMessageServiceApplication.class, args);
     }
 
 }
