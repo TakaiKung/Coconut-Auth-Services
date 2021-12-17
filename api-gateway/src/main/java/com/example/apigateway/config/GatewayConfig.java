@@ -21,6 +21,10 @@ public class GatewayConfig {
                         .filters(f->f.filter(filter))
                         .uri("lb://auth-service")
                 )
+                .route("message-service", r->r.path("/message/**")
+                        .filters(f -> f.filter(filter))
+                        .uri("lb://message-service")
+                )
                 .build();
     }
 }
